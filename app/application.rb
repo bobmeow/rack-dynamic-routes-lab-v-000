@@ -7,7 +7,7 @@ class Application
 
     if req.path.match("/items")
       item_param = req.path.split('items/').last
-      p req.path.split('items/').last
+      p req.path.split('items/')
       if found = @@items.detect{|item| item.name == item_param}
         resp.write(found.price)
         resp.status = 200
